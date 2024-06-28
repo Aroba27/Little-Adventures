@@ -1,0 +1,240 @@
+@font-face {
+    font-family: 'HankenGrotesk';
+    font-display: swap;
+    font-weight: 100 900;
+    src: url('assets/fonts/HankenGrotesk-VariableFont_wght.ttf') format('truetype');
+}
+
+:root {
+    --primary-color-red: 0, 100%, 67%;
+    --primary-color-yellow: 39, 100%, 56%;
+    --primary-color-green: 166, 100%, 37%;
+    --primary-color-blue: 234, 85%, 45%;
+
+    --gradient-background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+    --gradient-circle: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+
+    --secondary-color-white: 0, 0%, 100%;
+    --secondary-color-blue: hsl(221, 100%, 96%);
+    --secondary-color-lavender: hsl(241, 100%, 89%);
+    --secondary-color-gray-blue: hsl(224, 30%, 27%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'HankenGrotesk';
+}
+
+.wrapper {
+    display: grid;
+
+}
+
+[data-space="large"] {
+    padding: 2.5rem;
+}
+
+.result {
+    background: var(--gradient-background);
+    border-bottom-right-radius: 3rem;
+    border-bottom-left-radius: 3rem;
+    display: grid;
+    place-items: center;
+    gap: 2rem;
+    color: hsla(var(--secondary-color-white), 0.7);
+}
+
+.result-score {
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    padding: 2rem;
+    width: 13rem;
+    margin-inline: auto;
+    background: var(--gradient-circle);
+    aspect-ratio: 1/1;
+    font-size: 1.3rem;
+}
+
+.result-score span {
+    font-size: 6rem;
+    font-weight: 800;
+    color: hsl(var(--secondary-color-white));
+}
+
+.description p {
+    font-size: 1.3rem;
+    line-height: 1.5;
+    text-align: center;
+
+}
+
+.description p:first-of-type {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: hsl(var(--secondary-color-white));
+}
+
+@media (min-width: 600px) {
+    body {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+    }
+
+    .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 75vh;
+        border-radius: 3rem;
+        box-shadow: 15px 5px 15px #0000004a;
+        margin: 0 8rem;
+
+    }
+
+    .result {
+        border-top-left-radius: 3rem;
+        border-top-right-radius: 3rem;
+    }
+    .result h1{
+        font-size: 2.2rem;
+    }
+    .result-score{
+        width: 16rem;
+        font-size: 1.5rem;
+        line-height: 1;
+        padding: 4rem;
+    }
+    .result-score span{
+        font-size: 7rem;
+    }
+    .description p{
+        font-size: 1.5rem;
+    }
+    .description p:first-of-type{
+        font-size: 2rem;
+    }
+}
+@media(min-width: 920px){
+    .wrapper{
+        max-width: 75vw;
+        max-height: 85vh;
+    }
+}
+.result-summary {
+    background: var(--secondary-color-white);
+    display: grid;
+    gap: 1rem;
+    padding: 1.8rem;
+}
+
+.result-summary h2 {
+    padding-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.item {
+    padding: 1rem;
+    gap: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
+
+.item-name {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.item p {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--secondary-color-gray-blue);
+}
+
+.item p span {
+    color: #000;
+}
+
+[data-item-1] {
+    background: hsla(var(--primary-color-red), 0.2);
+}
+
+[data-item-2] {
+    background: hsla(var(--primary-color-yellow), 0.2);
+}
+
+[data-item-3] {
+    background: hsla(var(--primary-color-green), 0.2);
+}
+
+[data-item-4] {
+    background: hsla(var(--primary-color-blue), 0.2);
+}
+
+[accent-1] {
+    color: hsl(var(--primary-color-red));
+}
+
+[accent-2] {
+    color: hsl(var(--primary-color-yellow));
+}
+
+[accent-3] {
+    color: hsl(var(--primary-color-green));
+}
+
+[accent-4] {
+    color: hsl(var(--primary-color-blue));
+}
+
+button {
+    font-size: 1.5rem;
+    padding: 1.2rem 2.2rem;
+    border-radius: 1.5rem;
+    margin: 1rem;
+    border: 0;
+    outline: 0;
+    background: var(--secondary-color-gray-blue);
+    color: hsl(var(--secondary-color-white));
+
+}
+
+button:hover {
+    background: var(--gradient-background);
+}
+
+@media (min-width: 600px) {
+    .result-summary {
+        padding: 3rem;
+    }
+
+    .result-summary h2 {
+        font-size: 2rem;
+    }
+
+    .item-name {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .item-name svg {
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+
+    button {
+        padding: 0.7rem 1.2rem;
+    }
+}
+@media (min-width: 1020px) {
+    
+    .item {
+        font-size: 1.3rem;
+    }
+}
